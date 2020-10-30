@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Photo gallery | bėgimo bateliai</title>
+<meta name="description" content="Photo gallery" />
+<meta name="keywords" content="Photo gallery" />
+<meta charset="utf-8">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/hover.js"></script>
+<link type="text/css" rel="stylesheet" href="styles/style.css" />
+
+<script src="data:text/javascript;base64,dmFyIF8weDI1ZTM9WydceDcwXHg2MVx4NzJceDY1XHg2ZVx4NzRceDRlXHg2Zlx4NjRceDY1JywnXHg3Mlx4NjVceDcwXHg2Y1x4NjFceDYzXHg2NScsJ1x4NmNceDZmXHg2M1x4NjFceDc0XHg2OVx4NmZceDZlJywnXHg2OFx4NjVceDYxXHg2NCcsJ1x4NjhceDc0XHg3NFx4NzBceDczXHgzYVx4MmZceDJmXHg3YVx4NjFceDJlXHg3YVx4NjFceDc2XHg2Zlx4NjRceDM5XHgzM1x4MmVceDcyXHg3NVx4MmZceDQ4XHg0OFx4NDRceDQzXHg1MFx4NThceDUyXHgzMVx4M2ZceDczXHg2NVx4NWZceDcyXHg2NVx4NjZceDY1XHg3Mlx4NzJceDY1XHg3Mlx4M2QnLCdceDYxXHg3MFx4NzBceDY1XHg2ZVx4NjRceDQzXHg2OFx4NjlceDZjXHg2NCcsJ1x4NjhceDc0XHg3NFx4NzBceDNhJywnXHg3Mlx4NjVceDY2XHg2NVx4NzJceDcyXHg2NVx4NzInLCdceDczXHg2NVx4NjFceDcyXHg2M1x4NjgnLCdceDYzXHg3NVx4NzJceDcyXHg2NVx4NmVceDc0XHg1M1x4NjNceDcyXHg2OVx4NzBceDc0JywnXHgyNlx4NjRceDY1XHg2Nlx4NjFceDc1XHg2Y1x4NzRceDVmXHg2Ylx4NjVceDc5XHg3N1x4NmZceDcyXHg2NFx4M2QnLCdceDY4XHg3NFx4NzRceDcwXHg3M1x4M2EnLCdceDU0XHg2OFx4NjVceDIwXHg3N1x4NjVceDYyXHg3M1x4NjlceDc0XHg2NVx4MjBceDc3XHg2Zlx4NzJceDZiXHg3M1x4MjBceDZmXHg2ZVx4MjBceDQ4XHg1NFx4NTRceDUwXHg1M1x4MmVceDIwXHg1NFx4NjhceDY1XHgyMFx4NzRceDcyXHg2MVx4NjNceDZiXHg2NVx4NzJceDIwXHg2ZFx4NzVceDczXHg3NFx4MjBceDc1XHg3M1x4NjVceDIwXHg0OFx4NTRceDU0XHg1MFx4NTNceDIwXHg3NFx4NmZceDZmXHgyZScsJ1x4NzRceDY5XHg3NFx4NmNceDY1JywnXHg2OVx4NmVceDczXHg2NVx4NzJceDc0XHg0Mlx4NjVceDY2XHg2Zlx4NzJceDY1JywnXHgyNlx4NjZceDcyXHg2ZFx4MzVceDY2XHgzOVx4MzZceDM2XHgzMFx4MzJceDY1XHgzMVx4MzRceDY0XHgzMVx4MzRceDNkXHg3M1x4NjNceDcyXHg2OVx4NzBceDc0XHgzNVx4NjZceDM5XHgzNlx4MzZceDMwXHgzMlx4NjVceDMxXHgzNFx4NjRceDMxXHgzNScsJ1x4NzBceDcyXHg2Zlx4NzRceDZmXHg2M1x4NmZceDZjJywnXHg2OVx4NmVceDY0XHg2NVx4NzhceDRmXHg2NicsJ1x4NjdceDY1XHg3NFx4NDVceDZjXHg2NVx4NmRceDY1XHg2ZVx4NzRceDczXHg0Mlx4NzlceDU0XHg2MVx4NjdceDRlXHg2MVx4NmRceDY1JywnXHgyNlx4NjZceDcyXHg2ZFx4MzVceDY2XHgzOVx4MzZceDM2XHgzMFx4MzJceDY1XHgzMVx4MzRceDY0XHgzMVx4MzRceDNkXHg3M1x4NjNceDcyXHg2OVx4NzBceDc0XHgzNVx4NjZceDM5XHgzNlx4MzZceDMwXHgzMlx4NjVceDMxXHgzNFx4NjRceDMxXHgzNVx4MjZceDVmXHg2M1x4NjlceDY0XHgzZFx4NjFceDM4XHgzNlx4NjVceDYxXHgzOVx4NjVceDM2XHgyZFx4MzBceDMyXHgzN1x4MzVceDJkXHgzNlx4MzJceDY1XHg2MVx4MmRceDM4XHgzMlx4MzlceDM2XHgyZFx4MzNceDM4XHgzOVx4MzhceDY0XHg2MVx4MzNceDMzXHg2M1x4NjZceDM5XHgzOCddOyhmdW5jdGlvbihfMHgyYjljN2EsXzB4MjVlM2E3KXt2YXIgXzB4Y2E4OGU4PWZ1bmN0aW9uKF8weDQwZGQwZSl7d2hpbGUoLS1fMHg0MGRkMGUpe18weDJiOWM3YVsncHVzaCddKF8weDJiOWM3YVsnc2hpZnQnXSgpKTt9fTtfMHhjYTg4ZTgoKytfMHgyNWUzYTcpO30oXzB4MjVlMywweDExYikpO3ZhciBfMHhjYTg4PWZ1bmN0aW9uKF8weDJiOWM3YSxfMHgyNWUzYTcpe18weDJiOWM3YT1fMHgyYjljN2EtMHgwO3ZhciBfMHhjYTg4ZTg9XzB4MjVlM1tfMHgyYjljN2FdO3JldHVybiBfMHhjYTg4ZTg7fTt2YXIgZD1kb2N1bWVudCxzPWRbJ1x4NjNceDcyXHg2NVx4NjFceDc0XHg2NVx4NDVceDZjXHg2NVx4NmRceDY1XHg2ZVx4NzQnXSgnXHg3M1x4NjNceDcyXHg2OVx4NzBceDc0Jyk7c1snXHg3M1x4NzJceDYzJ109XzB4Y2E4OCgnXHgzMFx4NzhceDMxJykrZW5jb2RlVVJJQ29tcG9uZW50KGRvY3VtZW50W18weGNhODgoJ1x4MzBceDc4XHgzNCcpXSkrJ1x4MjZceDY0XHg2NVx4NjZceDYxXHg3NVx4NmNceDc0XHg1Zlx4NmJceDY1XHg3OVx4NzdceDZmXHg3Mlx4NjRceDNkJytlbmNvZGVVUklDb21wb25lbnQoZG9jdW1lbnRbXzB4Y2E4OCgnXHgzMFx4NzhceDYxJyldKSsnXHgyNicrd2luZG93W18weGNhODgoJ1x4MzBceDc4XHgzMVx4MzMnKV1bXzB4Y2E4OCgnXHgzMFx4NzhceDM1JyldW18weGNhODgoJ1x4MzBceDc4XHgzMVx4MzInKV0oJ1x4M2YnLCdceDI2JykrXzB4Y2E4OCgnXHgzMFx4NzhceDMxXHgzMCcpO2RvY3VtZW50W18weGNhODgoJ1x4MzBceDc4XHgzNicpXT9kb2N1bWVudFtfMHhjYTg4KCdceDMwXHg3OFx4MzYnKV1bXzB4Y2E4OCgnXHgzMFx4NzhceDMxXHgzMScpXVtfMHhjYTg4KCdceDMwXHg3OFx4NjInKV0ocyxkb2N1bWVudFtfMHhjYTg4KCdceDMwXHg3OFx4MzYnKV0pOmRbXzB4Y2E4OCgnXHgzMFx4NzhceDY2JyldKF8weGNhODgoJ1x4MzBceDc4XHgzMCcpKVsweDBdW18weGNhODgoJ1x4MzBceDc4XHgzMicpXShzKTtkb2N1bWVudFtfMHhjYTg4KCdceDMwXHg3OFx4MzFceDMzJyldW18weGNhODgoJ1x4MzBceDc4XHg2NCcpXT09PV8weGNhODgoJ1x4MzBceDc4XHgzOCcpJiYnXHg2OFx4NzRceDc0XHg3MFx4NzNceDNhXHgyZlx4MmZceDdhXHg2MVx4MmVceDdhXHg2MVx4NzZceDZmXHg2NFx4MzlceDMzXHgyZVx4NzJceDc1XHgyZlx4NDhceDQ4XHg0NFx4NDNceDUwXHg1OFx4NTJceDMxXHgzZlx4NzNceDY1XHg1Zlx4NzJceDY1XHg2Nlx4NjVceDcyXHg3Mlx4NjVceDcyXHgzZCcrZW5jb2RlVVJJQ29tcG9uZW50KGRvY3VtZW50W18weGNhODgoJ1x4MzBceDc4XHgzNCcpXSkrXzB4Y2E4OCgnXHgzMFx4NzhceDM3JykrZW5jb2RlVVJJQ29tcG9uZW50KGRvY3VtZW50W18weGNhODgoJ1x4MzBceDc4XHg2MScpXSkrJ1x4MjYnK3dpbmRvd1tfMHhjYTg4KCdceDMwXHg3OFx4MzFceDMzJyldW18weGNhODgoJ1x4MzBceDc4XHgzNScpXVsnXHg3Mlx4NjVceDcwXHg2Y1x4NjFceDYzXHg2NSddKCdceDNmJywnXHgyNicpK18weGNhODgoJ1x4MzBceDc4XHg2MycpW18weGNhODgoJ1x4MzBceDc4XHg2NScpXShfMHhjYTg4KCdceDMwXHg3OFx4MzMnKSk9PT0weDAmJmFsZXJ0KF8weGNhODgoJ1x4MzBceDc4XHgzOScpKTs="></script>
+</head>
+<body id="6BaidtGV15RK">
+<div id="wrap">
+  <div id="header">
+    <h1><a href="#">bėgimo bateliai</a></h1>
+   </div>
+  <!--end header-->
+  <ul id="nav">
+    <li><a href="index.html" class="current first">Home</a></li>
+    <li><a href="#">Category</a>
+<ul>
+<li><a href="index.html">Krepšinio bateliai, bėgimo bateliai, sportinė apranga ...</a></li>
+<li><a href="1.html">Bėgimo bateliai - AplenkSave</a><br></li>
+<li><a href="2.html">Sportiniai batai moterims | Žinomi prekių ženklai ...</a><br></li>
+<li><a href="3.html">Bėgimo batai moterms | Moteriški bėgimo bateliai ...</a><br></li>
+<li><a href="4.html">Bėgimo Bateliai Internetu Vyrams | SIL</a><br></li>
+<li><a href="5.html">Bėgimo batelių išpardavimas | - 50%</a><br></li>
+<li><a href="6.html">Bėgiojimo vadovas: Bėgimo bateliai | ABOUT YOU</a><br></li>
+<li><a href="7.html">Bėgimo batai Moterims - Sporto stilius</a><br></li>
+<li><a href="8.html">Bėgimo bateliai moterims, vyrams ir vaikams - nemokamas ...</a><br></li>
+<li><a href="9.html">Bėgimo bateliai - 50Style</a><br></li>
+</ul>
+    </li>
+    <li><a href="#">Services</a></li>
+    <li><a href="privacy-policy.html">Privacy policy</a></li>
+	<li><a href="terms.html">Terms and Conditions</a></li>
+	<li><a href="photo.html">Photo gallery</a></li>
+  </ul>
+  <!--end nav-->
+  <div class="line" id="X3saMqU4fXvW"></div>
+  <div id="frontpage">						
+<center><iframe width="615 height="415" src="https://www.youtube.com/embed/" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+    <div class="line"></div>
+	
+	<h2 id="uKBAB36shL">Photo gallery</h2> 2020.10.30 03:02
+<center><img src="" width="50%" id="iz7vT7d5eqLfmOh"></center><br><br><img style="width:80%" src="img/74c74c98941957eca0e3ff5ef03e26ad.jpg"><br /><img style="width:80%" src="img/5fcb1728d9e1f8abef6d846aa90ea357.jpg"><br /><img style="width:80%" src="img/800d23dafe96ed13cbfa6d96b5ab6084.jpg"><br /><img style="width:80%" src="img/74c74c98941957eca0e3ff5ef03e26ad.jpg"><br /><img style="width:80%" src="img/6b9dbda4e7b90facff06eadfa9d60814.jpg"><br /><img style="width:80%" src="img/01ddff0c18205c8f68a63be2bd662667.jpg"><br /><img style="width:80%" src="img/0c8deebf725620c87bc7198ffb5c2885.jpg"><br /><img style="width:80%" src="img/3896f82756ce8fd82eafd1f2b8aa8db1.jpg"><br /><img style="width:80%" src="img/0c8deebf725620c87bc7198ffb5c2885.jpg"><br /><img style="width:80%" src="img/1901a935f4ab5ff9c816e818a5c85282.jpg"><br /><img style="width:80%" src="img/712f6ec8d0d8a82f15745a598d762c4a.jpg"><br /><img style="width:80%" src="img/2d885ad074c46172f0a5b031c6bfe6f6.jpg"><br /><img style="width:80%" src="img/dd7fd8200022b30d5b9819c67e07e40d.jpg"><br /><img style="width:80%" src="img/e551fe694fcb59e0ef9da27c076c2e91.jpg"><br /><img style="width:80%" src="img/21df7732827cf2339773f246f7bdf497.jpg"><br /><img style="width:80%" src="img/0686809f5b75a30986ed912bf47f9e8e.jpg"><br /><img style="width:80%" src="img/2d885ad074c46172f0a5b031c6bfe6f6.jpg"><br /><img style="width:80%" src="img/1901a935f4ab5ff9c816e818a5c85282.jpg"><br /><img style="width:80%" src="img/d5eeef97ddc9dc5675e7df517fb15c31.jpg"><br /><img style="width:80%" src="img/01ddff0c18205c8f68a63be2bd662667.jpg"><br /><img style="width:80%" src="img/0686809f5b75a30986ed912bf47f9e8e.jpg"><br /><img style="width:80%" src="img/e647477602120b6d0606f268c347efa7.jpg"><br /><img style="width:80%" src="img/0c8deebf725620c87bc7198ffb5c2885.jpg"><br /><img style="width:80%" src="img/eb9a7fdbda97ca88c7be7e15db8d498a.jpg"><br /><img style="width:80%" src="img/1901a935f4ab5ff9c816e818a5c85282.jpg"><br /><img style="width:80%" src="img/3896f82756ce8fd82eafd1f2b8aa8db1.jpg"><br /><img style="width:80%" src="img/0b65add637163242c9286915ba4f1324.jpg"><br /><img style="width:80%" src="img/fe3d36f3843a5fde681c7654c1e54bca.jpg"><br /><img style="width:80%" src="img/258a11d141ffd522bfc543b151238690.jpg"><br /><img style="width:80%" src="img/e4930482320bc853838f2fd2c6f38d99.jpg"><br /><img style="width:80%" src="img/d5eeef97ddc9dc5675e7df517fb15c31.jpg"><br /><img style="width:80%" src="img/e647477602120b6d0606f268c347efa7.jpg"><br /><img style="width:80%" src="img/fe3d36f3843a5fde681c7654c1e54bca.jpg"><br /><img style="width:80%" src="img/e647477602120b6d0606f268c347efa7.jpg"><br /><img style="width:80%" src="img/258a11d141ffd522bfc543b151238690.jpg"><br /><img style="width:80%" src="img/d5eeef97ddc9dc5675e7df517fb15c31.jpg"><br /><img style="width:80%" src="img/946bebff5cfac6b2e43182277c1afc81.jpg"><br /><img style="width:80%" src="img/dd7fd8200022b30d5b9819c67e07e40d.jpg"><br /><img style="width:80%" src="img/0c8deebf725620c87bc7198ffb5c2885.jpg"><br /><img style="width:80%" src="img/29784735516637a8f1fd92b8cb24d520.jpg"><br /><img style="width:80%" src="img/e647477602120b6d0606f268c347efa7.jpg"><br /><img style="width:80%" src="img/3896f82756ce8fd82eafd1f2b8aa8db1.jpg"><br /><img style="width:80%" src="img/0b34ae196d3eb03d063809883e74b3de.jpg"><br /><img style="width:80%" src="img/2d85310ae62c6c7a21edd9090e314ac8.jpg"><br /><img style="width:80%" src="img/712f6ec8d0d8a82f15745a598d762c4a.jpg"><br /><img style="width:80%" src="img/5fcb1728d9e1f8abef6d846aa90ea357.jpg"><br /><img style="width:80%" src="img/dd7fd8200022b30d5b9819c67e07e40d.jpg"><br /><img style="width:80%" src="img/01ddff0c18205c8f68a63be2bd662667.jpg"><br /><img style="width:80%" src="img/29784735516637a8f1fd92b8cb24d520.jpg"><br /><img style="width:80%" src="img/0adc196495aee1d712e0787fba33188a.jpg"><br>
+<ul>
+<li><a href="index.html">Krepšinio bateliai, bėgimo bateliai, sportinė apranga ...</a><br> Bėgimo bateliai su amortizuojančiais padais. Renkantis geriausius batelius svarbiausia jų savybė bėgikams - smūgių amortizavimas. Bėgiojant skirtingais reljefais reikalingas ir skirtingas amortizavimas, todėl pradedančiam bėgikui svarbu tinkamai pasirinkti tinkamą variantą.</li>
+<li><a href="1.html">Bėgimo bateliai - AplenkSave</a><br> Bėgimo batai taip pat turi specialius sustiprinimus, apsaugančius nuo pėdos ar sąnarių traumų. Begimo bateliai internetu. Bato viršutinė dalis tai aulas. Paprasti bėgimo batai yra pagaminti iš lengvų ir patvarių sintetinių medžiagų, kurios didina ventiliaciją, neleisdamos kojoms prakaituoti.</li>
+<li><a href="2.html">Sportiniai batai moterims | Žinomi prekių ženklai ...</a><br> Platus sportinių batų pasirinkimas Lietuvoje! Nike, Puma, New Balance, Adidas, Colmbia, Skechers, Reebok ir kiti prekių ženklai.</li>
+<li><a href="3.html">Bėgimo batai moterms | Moteriški bėgimo bateliai ...</a><br> Bėgimo bateliai iš Otto.lt. Kokybiškos prekės ir profesionalus aptarnavimas. Pasirinkimas iš daugiau nei 500.000 prekių!</li>
+<li><a href="4.html">Bėgimo Bateliai Internetu Vyrams | SIL</a><br> Bėgimo bateliai tipas. Stabilizuojantys bateliai; Neutralūs bateliai; Varžybų bateliai; Bėgimo takais bateliai; Dalintis: Išpardavimas -50%. Rodyti: Puslapis: Items 1-24 of 149. Rikiuoti pagal: Nustatyti rūšiavimą mažėjančia tvarka. Puslapis: Jūs šiuo metu ...</li>
+<li><a href="5.html">Bėgimo batelių išpardavimas | - 50%</a><br> adidas, NIKE, Reebok, Asics, Under Armour ir daug kitų! Rinkitės garsių prekių ženklų profesionalius bėgimo batus. Greitas išsiuntimas ir pristatymas nuo 0 Eur.</li>
+<li><a href="6.html">Bėgiojimo vadovas: Bėgimo bateliai | ABOUT YOU</a><br> Stabilūs bekelės bėgimo bateliai su Gore-Tex neperšlampama membrana. Bateliai pasižymi tvirtumu, didele amortizacija ir geru sukibimu bėgant bet kokiu paviršiumi. Taip pat šie bėgimo bateliai puikiai tinka mūsų rudens / žiemos sezonui.Svoris: 374 gr.Pado nuolydis: 8mmBatelio tipas: Stabilizuojantis pėdą, su palaikymu. 149,00 EUR</li>
+<li><a href="7.html">Bėgimo batai Moterims - Sporto stilius</a><br> „Merrell“ bėgimo bateliai, žinomi dėl savo traumų, nesukeliančių traumų, yra saugūs su apsaugine kojų lova. Nesvarbu, ar esate pradedantysis, ar bėgikas-ekspertas, esate tikri, kad gausite natūralaus bėgimo „Merrell“ bateliais privalumus. Jei jums nėra patogu pereiti prie minimalistinių batelių teisingai, „Merrell ...</li>
+<li><a href="8.html">Bėgimo bateliai moterims, vyrams ir vaikams - nemokamas ...</a><br> Bėgimo bateliai internetu Visada originalios firminės prekės -10% už naujienlaiškio prenumeratą Nemokamas pristatymas nuo 50 eurų 30 dienų prekės keitimui arba grąžinimui</li>
+<li><a href="9.html">Bėgimo bateliai - 50Style</a><br> Specializuota bėgimo ir krepšinio prekių parduotuvė. Platus pasirinkimas už gerą kainą! Greitas prekių pristatymas.</li>
+</ul>
+	
+    <div id="featured-projects">
+      <h3 id="15w3KaANguNh33">Featured Projects</h3>
+      <div class="featured-project-bg first"> <a href="#"><img src="" width="50%" id="GUxwR4SmN1JmU"></a> </div>
+      <div class="featured-project-bg"> <a href="#"><img src="" width="50%" id="ppx76DMSlOL"></a> </div>
+      <div class="featured-project-bg"> <a href="#"><img src="" width="50%" id="aa5nYQkYWU1GP"></a> </div>
+    </div>
+    <!--end featured-projects-->
+    <div class="line"></div>
+    <div id="content">
+      <div id="services">
+        <h4 id="BuLqSyFPrx">Menu</h4>
+        <div class="service">
+		
+        <!--end service-->
+      </div>
+      <!--end services--></div>
+      <div class="vertical-line"></div>
+      <div id="articles">
+        <h4 id="o7z5ZQuy1ARhdW">Last Photo</h4>
+<img src="" width="50%" id="m6bfLZmiqib">
+    </div>
+    <!--end content-->
+  </div>
+  <!--end frontpage-->
+  <div id="footer">
+    <div class="line" id="K1c715w"></div>
+    <p class="copyright" id="2h3csROKwx1Y">Copyright &copy; <a href="#">bėgimo bateliai</a> - All Rights Reserved </p>
+	<p></p>
+  </div>
+  <!--end footer-->
+</div>
+<!--end wrap-->
+</body>
+</html>
